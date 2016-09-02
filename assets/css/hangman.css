@@ -1,0 +1,79 @@
+.hanger-container {
+  border: 1px dotted red;
+  color: white;
+}
+
+.hanger-base {
+  width: 500px;
+  margin: 0px auto;
+}
+
+#base {
+  margin: 0px auto;
+  width: 180px;
+  height: 20px;
+  background: black;
+  margin-bottom: 25px;
+}
+
+#pole {
+  margin: 0px auto;
+  width: 20px;
+  height: 300px;
+  background: black;
+}
+
+#arm {
+  margin: 0px auto;
+  height: 20px;
+  width: 150px;
+  background: black;
+  position: relative;
+  right: 65px;
+}
+
+.person-container {
+  width: 150px;
+  height: 220px;
+  /*overflow: hidden;*/
+}
+
+#head {
+  width: 50px;
+  height: 50px;
+  background: grey;
+  -moz-border-radius: 50px;
+  -webkit-border-radius: 50px;
+  border-radius: 50px;
+}
+
+#body {
+  width: 40px;
+  height: 75px;
+  background: grey;
+}
+
+#l-arm {
+  width: 12px;
+  height: 50px;
+  background: grey;
+}
+
+#r-arm {
+  width: 12px;
+  height: 50px;
+  background: grey;
+  overflow: hidden;
+}
+
+#l-leg {
+  width: 12px;
+  height: 50px;
+  background: grey;
+}
+
+#r-leg {
+  width: 12px;
+  height: 50px;
+  background: grey;
+}

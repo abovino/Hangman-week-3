@@ -1,0 +1,48 @@
+body, html {
+  height: 100%;
+}
+
+#bootstrap-override {
+  background-color: #D6D6D6;
+}
+
+.wrapper {
+  margin: 0px auto;
+  text-align: center;
+  background-color: #D6D6D6;
+  min-height: 100%;
+  height: auto;
+  padding-top: 50px;
+}
+
+.landing {
+  font-family: 'Sigmar One', cursive;
+  background-color: #57FAC9;
+  width: 100%;
+  margin: 0px auto;
+  padding: 0px auto;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+#main-title {
+  font-size: 60px;
+  margin: 0px 0px;
+}
+
+#subtitle {
+  margin-top: 0px;
+  margin-bottom: 25px;
+}
+
+.img-container {
+  width: 100%;
+}
+
+#startBtn {
+
+}
+
+#usaVector {
+
+}
