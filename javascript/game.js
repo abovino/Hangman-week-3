@@ -15,6 +15,7 @@ window.onload = function() {
     for (var i = 0; i < answer.length; i++) {
       emptyLetters.push(' _ ');
     }
+    
     console.log(emptyLetters);
   }
 
