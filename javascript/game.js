@@ -2,14 +2,15 @@ window.onload = function() {
   var userGuesses;
   var words = ["Helena", "Bismark", "Trenton", "Harrisburg", "Concord", "Albany", "Austin", "Tallahassee"];
   var emptyLetters;
-  var lettersGuessed;
+  var usedLetters;
   var guessesCount;
   var wins;
   var losses;
   var answer;
   var alphabet = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
 
-  var switchEmptyLetters = document.getElementById('word')
+  var switchEmptyLetters = document.getElementById('word');
+  var switchusedLetters = document.getElementById('used-letters');
 
   function createScoreboard() {
     guessesCount = 6;
@@ -23,7 +24,7 @@ window.onload = function() {
   }
 
   function startGame() {
-    lettersGuessed = [];
+    usedLetters = [];
     emptyLetters = [];
     answer = words[Math.floor(Math.random() * words.length)];
     console.log("The Word is: " + answer);
