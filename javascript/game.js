@@ -10,7 +10,10 @@ window.onload = function() {
   var alphabet = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
 
   var switchEmptyLetters = document.getElementById('word');
-  var switchusedLetters = document.getElementById('used-letters');
+  var switchUsedLetters = document.getElementById('used-letters');
+  var switchGuessesCount = document.getElementById('guesses-remaining');
+  var switchWins = document.getElementById('wins');
+  var switchLosses = document.getElementById('losses');
 
   function createScoreboard() {
     guessesCount = 6;
