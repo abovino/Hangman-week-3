@@ -21,6 +21,10 @@ window.onload = function() {
     for (var i = 0; i < answer.length; i++) {
       emptyLetters.push(' _ ');
       switchEmptyLetters.innerHTML = "The word is: " + emptyLetters.join('');
+      switchUsedLetters.innerHTML = "Letters guessed: ";
+      switchGuessesCount.innerHTML = "Guesses remaining: " + guessesCount;
+      switchWins.innerHTML = "Wins: " + wins;
+      switchLosses.innerHTML = "Losses: " + losses;
     }
     
     console.log(emptyLetters);
