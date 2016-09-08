@@ -45,7 +45,9 @@ window.onload = function() {
 
     var keyPressed = event.key.toUpperCase();
 
-    
+    for (i = 0; i < alphabet.length; i++) {
+      console.log(alphabet.length);
+    }
   }
 
 } /*window.onload = function()*/
