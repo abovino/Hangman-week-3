@@ -42,6 +42,9 @@ window.onload = function() {
   startGame();
 
   document.onkeyup = function(event) {
+
+    var keyPressed = event.key.toUpperCase();
+
     
   }
 
