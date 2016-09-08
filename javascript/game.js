@@ -48,6 +48,8 @@ window.onload = function() {
     for (i = 0; i < alphabet.length; i++) {
       if (keyPressed === alphabet[i]) {
         console.log("TRUE: " + alphabet[i]);
+        guessesCount--;
+        switchGuessesCount.innerHTML = "Guesses remaining: " + guessesCount;
       }
     }
   }
