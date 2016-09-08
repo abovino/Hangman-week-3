@@ -40,4 +40,9 @@ window.onload = function() {
 
   //Starts game and calls the createScoreboard function
   startGame();
+
+  document.onkeyup = function(event) {
+    
+  }
+
 } /*window.onload = function()*/
