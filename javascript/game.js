@@ -28,7 +28,6 @@ window.onload = function() {
       switchWins.innerHTML = "Wins: " + wins;
       switchLosses.innerHTML = "Losses: " + losses;
     }
-    
     console.log(emptyLetters);
   }
 
@@ -47,7 +46,7 @@ window.onload = function() {
   //Captures users keystrokes
   document.onkeyup = function(event) {
 
-    //Makes users keystrokes upper case and stores it to keyPressed
+    //Makes users keystrokes uppercase and stores it to keyPressed
     var keyPressed = event.key.toUpperCase();
 
     //Checks if a letter was entered by the user
