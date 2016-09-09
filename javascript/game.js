@@ -61,15 +61,22 @@ window.onload = function() {
           usedLetters.push(keyPressed);
           console.log(usedLetters);
           //Subtracts 1 from guessesCount and updates the DOM
-          guessesCount--;
+          guessesCount--; //THIS SHOULD BE MOVED TO IF keyPressed IS NOT A CORRECT LETTER
           switchGuessesCount.innerHTML = "Guesses remaining: " + guessesCount;
+          switchUsedLetters.innerHTML = "Letters Guessed: " + usedLetters;
+
+          if (answer.indexOf(keyPressed) > -1) {
+            console.log("TRUEEEEEEEE");
+          } else {
+            console.log("FALSEEEEEEEE");
+          }
         }
         
       }
 
     }
 
-  }
+  }/*document.onkeyup()*/
 
 
 
