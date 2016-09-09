@@ -65,7 +65,7 @@ window.onload = function() {
           switchGuessesCount.innerHTML = "Guesses remaining: " + guessesCount;
           switchUsedLetters.innerHTML = "Letters Guessed: " + usedLetters;
 
-          if (answer.indexOf(keyPressed) > -1) {
+          if (answer.indexOf(keyPressed) >= 0) {
             console.log("TRUEEEEEEEE");
           } else {
             console.log("FALSEEEEEEEE");
