@@ -49,20 +49,21 @@ window.onload = function() {
     //Makes users keystrokes uppercase and stores it to keyPressed
     var keyPressed = String.fromCharCode(event.keyCode).toUpperCase();
 
-    console.log(keyPressed);
+    //Checks if a letter was entered by the user
+    for (i = 0; i < alphabet.length; i++) {
+      //If user enters a letter the game captures the input, else nothing happens
+      if (keyPressed === alphabet[i]) {
+        console.log(alphabet[i]);
+        //usedLetters.push(keyPressed);
+        //Subtracts 1 from guessesCount and updates the DOM
+        guessesCount--;
+        switchGuessesCount.innerHTML = "Guesses remaining: " + guessesCount;
+      }
+      
+    }
 
   }
 
-/*  //Checks if a letter was entered by the user
-  for (i = 0; i < alphabet.length; i++) {
-    //If user enters a letter the game captures the input, else nothing happens
-    if (keyPressed === alphabet[i]) {
-      console.log(alphabet[i]);
-      //usedLetters.push(keyPressed);
-      //Subtracts 1 from guessesCount and updates the DOM
-      guessesCount--;
-      switchGuessesCount.innerHTML = "Guesses remaining: " + guessesCount;
-    }
-  }*/
+
 
 } /*window.onload = function()*/
