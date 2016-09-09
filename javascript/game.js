@@ -54,11 +54,24 @@ window.onload = function() {
       //If user enters a letter the game captures the input, else nothing happens
       if (keyPressed === alphabet[i]) {
         console.log("TRUE: " + alphabet[i]);
+        usedLetters.push(keyPressed);
         //Subtracts 1 from guessesCount and updates the DOM
         guessesCount--;
         switchGuessesCount.innerHTML = "Guesses remaining: " + guessesCount;
       }
     }
+
+    console.log(usedLetters);
+
+    
+
+    /*if (keyPressed === alphabet.length) {
+      console.log("TRUE");
+      
+      switchUsedLetters.innerHTML = "Letters guessed: " + usedLetters;
+    } else {
+      console.log("FALSE");
+    }*/
   }
 
 } /*window.onload = function()*/
