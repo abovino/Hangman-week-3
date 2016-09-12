@@ -35,13 +35,25 @@ window.onload = function() {
   function startGame() {
     usedLetters = [];
     emptyLetters = [];
-    answer = words[Math.floor(Math.random() * words.length)];
+    selectedWord = words[Math.floor(Math.random() * words.length)];
+    answer = selectedWord.split('');
     console.log("The Word is: " + answer);
     createScoreboard();
   }
 
   //Starts game and calls the createScoreboard function
   startGame();
+
+  //Checks if keyPressed is in word
+ /* function guessChecker(keyPressed) {
+    for (i = 0; i < answer.length; i++) {
+      if (keyPressed === answer[i]) {
+        console.log("TRUE IT'S A MATCH");
+      } else {
+        console.log("FALSE THAT LETTER IS INCORREC");
+      }
+    }
+  }*/
 
   //Captures users keystrokes
   document.onkeyup = function(event) {
@@ -64,6 +76,8 @@ window.onload = function() {
           guessesCount--; //THIS SHOULD BE MOVED TO IF keyPressed IS NOT A CORRECT LETTER
           switchGuessesCount.innerHTML = "Guesses remaining: " + guessesCount;
           switchUsedLetters.innerHTML = "Letters Guessed: " + usedLetters;
+
+          /*guessChecker(keyPressed);*/
 
           if (answer.indexOf(keyPressed) >= 0) {
             console.log("TRUEEEEEEEE");
