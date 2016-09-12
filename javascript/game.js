@@ -3,6 +3,7 @@ window.onload = function() {
   var words = ["Helena", "Bismark", "Trenton", "Harrisburg", "Concord", "Albany", "Austin", "Tallahassee"];
   var emptyLetters;
   var usedLetters;
+  var correctLetters;
   var guessesCount;
   var wins;
   var losses;
@@ -21,8 +22,8 @@ window.onload = function() {
     guessesCount = 6;
     //Creates empty letter placeholders for HTML
     for (var i = 0; i < answer.length; i++) {
-      emptyLetters.push(' _ ');
-      switchEmptyLetters.innerHTML = "The word is: " + emptyLetters.join('');
+      //emptyLetters.push(' _ ');
+      switchEmptyLetters.innerHTML = "The word is: " + correctLetters;
       switchUsedLetters.innerHTML = "Letters guessed: ";
       switchGuessesCount.innerHTML = "Guesses remaining: " + guessesCount;
       switchWins.innerHTML = "Wins: " + wins;
@@ -35,7 +36,8 @@ window.onload = function() {
   function startGame() {
     usedLetters = [];
     emptyLetters = [];
-    selectedWord = words[Math.floor(Math.random() * words.length)];
+    correctLetters = [];
+    selectedWord = words[Math.floor(Math.random() * words.length)].toUpperCase();
     answer = selectedWord.split('');
     console.log("The Word is: " + answer);
     createScoreboard();
@@ -45,15 +47,21 @@ window.onload = function() {
   startGame();
 
   //Checks if keyPressed is in word
- /* function guessChecker(keyPressed) {
+  function guessChecker(keyPressed) {
     for (i = 0; i < answer.length; i++) {
+      console.log(answer[i]);
       if (keyPressed === answer[i]) {
         console.log("TRUE IT'S A MATCH");
+        correctLetters.push(keyPressed);
+        //switchEmptyLetters.innerHTML = "The word is: " + 
       } else {
-        console.log("FALSE THAT LETTER IS INCORREC");
+        console.log("FALSE THAT LETTER IS INCORRECT");
       }
     }
-  }*/
+
+    console.log(correctLetters);
+    return;
+  }
 
   //Captures users keystrokes
   document.onkeyup = function(event) {
@@ -77,18 +85,20 @@ window.onload = function() {
           switchGuessesCount.innerHTML = "Guesses remaining: " + guessesCount;
           switchUsedLetters.innerHTML = "Letters Guessed: " + usedLetters;
 
-          /*guessChecker(keyPressed);*/
+          //guessChecker(keyPressed);
 
-          if (answer.indexOf(keyPressed) >= 0) {
+          /*if (answer.indexOf(keyPressed) >= 0) {
             console.log("TRUEEEEEEEE");
           } else {
             console.log("FALSEEEEEEEE");
-          }
+          }*/
         }
         
       }
 
     }
+
+    guessChecker(keyPressed);
 
   }/*document.onkeyup()*/
 
