@@ -52,8 +52,7 @@ window.onload = function() {
       console.log(answer[i]);
       if (keyPressed === answer[i]) {
         console.log("TRUE IT'S A MATCH");
-        correctLetters.push(keyPressed);
-        //switchEmptyLetters.innerHTML = "The word is: " + 
+        correctLetters.push(keyPressed); 
       } else {
         console.log("FALSE THAT LETTER IS INCORRECT");
       }
@@ -98,7 +97,7 @@ window.onload = function() {
 
     }
 
-    guessChecker(keyPressed);
+    /*guessChecker(keyPressed);*/
 
   }/*document.onkeyup()*/
 
