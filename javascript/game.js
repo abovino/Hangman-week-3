@@ -83,14 +83,6 @@ window.onload = function() {
           guessesCount--; //THIS SHOULD BE MOVED TO IF keyPressed IS NOT A CORRECT LETTER
           switchGuessesCount.innerHTML = "Guesses remaining: " + guessesCount;
           switchUsedLetters.innerHTML = "Letters Guessed: " + usedLetters;
-
-          //guessChecker(keyPressed);
-
-          /*if (answer.indexOf(keyPressed) >= 0) {
-            console.log("TRUEEEEEEEE");
-          } else {
-            console.log("FALSEEEEEEEE");
-          }*/
         }
         
       }
@@ -100,7 +92,5 @@ window.onload = function() {
     guessChecker(keyPressed);
 
   }/*document.onkeyup()*/
-
-
 
 } /*window.onload = function()*/
