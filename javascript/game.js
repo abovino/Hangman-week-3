@@ -97,7 +97,7 @@ window.onload = function() {
 
     }
 
-    /*guessChecker(keyPressed);*/
+    guessChecker(keyPressed);
 
   }/*document.onkeyup()*/
 
