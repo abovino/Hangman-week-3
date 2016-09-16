@@ -75,6 +75,7 @@ window.onload = function() {
     //Makes users keystrokes uppercase and stores it to keyPressed
     var keyPressed = String.fromCharCode(event.keyCode).toUpperCase();
 
+    //checks if keyPressed is already used
     if (usedLetters.indexOf(keyPressed) > -1) {
       alert("You already used that letter!");
       return;
@@ -82,6 +83,7 @@ window.onload = function() {
       console.log(keyPressed);
     }
 
+    //If letter wasn't guessed already then store it in usedLetters array
     if (alphabet.indexOf(keyPressed) !== -1) {
       usedLetters.push(keyPressed);
       switchUsedLetters.innerHTML = "Letters Guessed: " + usedLetters;
