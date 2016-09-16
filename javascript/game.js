@@ -61,6 +61,7 @@ window.onload = function() {
       } 
     }
 
+    //If letter guessed is not correct then subtract a guess
     if (!isCorrect) {
       guessCount--;
       switchGuessCount.innerHTML = "Guesses remaining: " + guessCount;
