@@ -48,18 +48,17 @@ window.onload = function() {
   //Starts game and calls the createScoreboard function
   startGame();
 
+  //Checks the letter entered by the user
   function checkLetter(letter) {
     var isCorrect = false;
     for (i = 0; i <= answer.length; i++) {
-      
       if (answer[i] === letter) {
         temp[i] = answer[i];
         console.log(temp);
         correctLetters = temp.join("");
         console.log(correctLetters);
         isCorrect = true;
-      }
-      
+      } 
     }
 
     if (!isCorrect) {
@@ -67,7 +66,7 @@ window.onload = function() {
       switchGuessCount.innerHTML = "Guesses remaining: " + guessCount;
       console.log(guessCount)
     }
-  }
+  }/*checkLetter()*/
 
   //Captures users keystrokes
   document.onkeyup = function(event) {
