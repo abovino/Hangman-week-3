@@ -49,17 +49,24 @@ window.onload = function() {
   startGame();
 
   function checkLetter(letter) {
+    var isCorrect = false;
     for (i = 0; i <= answer.length; i++) {
+      
       if (answer[i] === letter) {
         temp[i] = answer[i];
         console.log(temp);
         correctLetters = temp.join("");
         console.log(correctLetters);
-        return;
-      } 
+        isCorrect = true;
+      }
+      
     }
-    guessCount--;
-    switchGuessCount.innerHTML = "Guesses remaining: " + guessCount;
+
+    if (!isCorrect) {
+      guessCount--;
+      switchGuessCount.innerHTML = "Guesses remaining: " + guessCount;
+      console.log(guessCount)
+    }
   }
 
   //Captures users keystrokes
