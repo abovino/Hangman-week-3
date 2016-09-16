@@ -4,7 +4,7 @@ window.onload = function() {
   var emptyLetters;
   var usedLetters;
   var correctLetters;
-  var guessesCount;
+  var guessCount;
   var wins;
   var losses;
   var answer;
@@ -14,20 +14,20 @@ window.onload = function() {
   //Assigns variables to document.getElementById
   var switchEmptyLetters = document.getElementById('word');
   var switchUsedLetters = document.getElementById('used-letters');
-  var switchGuessesCount = document.getElementById('guesses-remaining');
+  var switchGuessCount = document.getElementById('guesses-remaining');
   var switchWins = document.getElementById('wins');
   var switchLosses = document.getElementById('losses');
 
   //Modifies the DOM to create a scoreboard with the word, guess count, and wins/losses
   function createScoreboard() {
-    guessesCount = 6;
+    guessCount = 6;
     //Creates empty letter placeholders for HTML
     for (var i = 0; i < answer.length; i++) {
       //emptyLetters.push(' _ ');
     }
     switchEmptyLetters.innerHTML = "The word is: " + correctLetters;
     switchUsedLetters.innerHTML = "Letters guessed: ";
-    switchGuessesCount.innerHTML = "Guesses remaining: " + guessesCount;
+    switchguessCount.innerHTML = "Guesses remaining: " + guessCount;
     switchWins.innerHTML = "Wins: " + wins;
     switchLosses.innerHTML = "Losses: " + losses;
   console.log(emptyLetters);
@@ -48,22 +48,6 @@ window.onload = function() {
   //Starts game and calls the createScoreboard function
   startGame();
 
-  /*//Checks if keyPressed is in word
-  function guessChecker(keyPressed) {
-    for (i = 0; i < answer.length; i++) {
-      console.log(answer[i]);
-      if (keyPressed === answer[i]) {
-        console.log("TRUE IT'S A MATCH");
-        correctLetters.push(keyPressed); 
-      } else {
-        console.log("FALSE THAT LETTER IS INCORRECT");
-      }
-    }
-
-    console.log(correctLetters);
-    return;
-  }*/
-
   function checkLetter(letter) {
     for (i = 0; i < answer.length; i++) {
       if (answer[i] === letter) {
@@ -71,6 +55,9 @@ window.onload = function() {
         console.log(temp);
         correctLetters = temp.join("");
         console.log(correctLetters);
+      } else {
+        guessCount--;
+        console.log(guessCount)
       }
     }
   }
