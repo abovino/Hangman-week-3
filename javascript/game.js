@@ -23,11 +23,11 @@ window.onload = function() {
     guessCount = 6;
     //Creates empty letter placeholders for HTML
     for (var i = 0; i < answer.length; i++) {
-      //emptyLetters.push(' _ ');
+      emptyLetters.push(' _ ');
     }
     switchEmptyLetters.innerHTML = "The word is: " + correctLetters;
     switchUsedLetters.innerHTML = "Letters guessed: ";
-    switchguessCount.innerHTML = "Guesses remaining: " + guessCount;
+    switchGuessCount.innerHTML = "Guesses remaining: " + guessCount;
     switchWins.innerHTML = "Wins: " + wins;
     switchLosses.innerHTML = "Losses: " + losses;
   console.log(emptyLetters);
@@ -49,17 +49,17 @@ window.onload = function() {
   startGame();
 
   function checkLetter(letter) {
-    for (i = 0; i < answer.length; i++) {
+    for (i = 0; i <= answer.length; i++) {
       if (answer[i] === letter) {
         temp[i] = answer[i];
         console.log(temp);
         correctLetters = temp.join("");
         console.log(correctLetters);
-      } else {
-        guessCount--;
-        console.log(guessCount)
-      }
+        return;
+      } 
     }
+    guessCount--;
+    switchGuessCount.innerHTML = "Guesses remaining: " + guessCount;
   }
 
   //Captures users keystrokes
@@ -79,6 +79,8 @@ window.onload = function() {
       usedLetters.push(keyPressed);
       switchUsedLetters.innerHTML = "Letters Guessed: " + usedLetters;
       console.log(usedLetters);
+    } else {
+      return;
     }
 
     checkLetter(keyPressed);
