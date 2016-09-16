@@ -9,6 +9,7 @@ window.onload = function() {
   var losses;
   var answer;
   var alphabet = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+  var temp = [];
 
   //Assigns variables to document.getElementById
   var switchEmptyLetters = document.getElementById('word');
@@ -23,13 +24,13 @@ window.onload = function() {
     //Creates empty letter placeholders for HTML
     for (var i = 0; i < answer.length; i++) {
       //emptyLetters.push(' _ ');
-      switchEmptyLetters.innerHTML = "The word is: " + correctLetters;
-      switchUsedLetters.innerHTML = "Letters guessed: ";
-      switchGuessesCount.innerHTML = "Guesses remaining: " + guessesCount;
-      switchWins.innerHTML = "Wins: " + wins;
-      switchLosses.innerHTML = "Losses: " + losses;
     }
-    console.log(emptyLetters);
+    switchEmptyLetters.innerHTML = "The word is: " + correctLetters;
+    switchUsedLetters.innerHTML = "Letters guessed: ";
+    switchGuessesCount.innerHTML = "Guesses remaining: " + guessesCount;
+    switchWins.innerHTML = "Wins: " + wins;
+    switchLosses.innerHTML = "Losses: " + losses;
+  console.log(emptyLetters);
   }
 
   //Starts the game and selects a random word, calls the createScoreboard function
@@ -40,13 +41,14 @@ window.onload = function() {
     selectedWord = words[Math.floor(Math.random() * words.length)].toUpperCase();
     answer = selectedWord.split('');
     console.log("The Word is: " + answer);
+    console.log(answer.length);
     createScoreboard();
   }
 
   //Starts game and calls the createScoreboard function
   startGame();
 
-  //Checks if keyPressed is in word
+  /*//Checks if keyPressed is in word
   function guessChecker(keyPressed) {
     for (i = 0; i < answer.length; i++) {
       console.log(answer[i]);
@@ -60,6 +62,17 @@ window.onload = function() {
 
     console.log(correctLetters);
     return;
+  }*/
+
+  function checkLetter(letter) {
+    for (i = 0; i < answer.length; i++) {
+      if (answer[i] === letter) {
+        temp[i] = answer[i];
+        console.log(temp);
+        correctLetters = temp.join("");
+        console.log(correctLetters);
+      }
+    }
   }
 
   //Captures users keystrokes
@@ -68,28 +81,20 @@ window.onload = function() {
     //Makes users keystrokes uppercase and stores it to keyPressed
     var keyPressed = String.fromCharCode(event.keyCode).toUpperCase();
 
-    //Checks if a letter was entered by the user
-    for (i = 0; i < alphabet.length; i++) {
-      //If user enters a letter the game captures the input, else nothing happens
-      if (keyPressed === alphabet[i]) {
-        //Checks if keyPressed has already been pushed to usedLetters and alerts user if true
-        if (usedLetters.indexOf(keyPressed) > -1) {
-          alert("You already used that letter!");
-        } else {
-          console.log(alphabet[i]);
-          usedLetters.push(keyPressed);
-          console.log(usedLetters);
-          //Subtracts 1 from guessesCount and updates the DOM
-          guessesCount--; //THIS SHOULD BE MOVED TO IF keyPressed IS NOT A CORRECT LETTER
-          switchGuessesCount.innerHTML = "Guesses remaining: " + guessesCount;
-          switchUsedLetters.innerHTML = "Letters Guessed: " + usedLetters;
-        }
-        
-      }
-
+    if (usedLetters.indexOf(keyPressed) > -1) {
+      alert("You already used that letter!");
+      return;
+    } else {
+      console.log(keyPressed);
     }
 
-    guessChecker(keyPressed);
+    if (alphabet.indexOf(keyPressed) !== -1) {
+      usedLetters.push(keyPressed);
+      switchUsedLetters.innerHTML = "Letters Guessed: " + usedLetters;
+      console.log(usedLetters);
+    }
+
+    checkLetter(keyPressed);
 
   }/*document.onkeyup()*/
 
