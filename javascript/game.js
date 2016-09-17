@@ -23,9 +23,9 @@ window.onload = function() {
     guessCount = 6;
     //Creates empty letter placeholders for HTML
     for (var i = 0; i < answer.length; i++) {
-      emptyLetters.push(' _ ');
+      correctLetters.push(' _ ');
     }
-    switchEmptyLetters.innerHTML = "The word is: " + correctLetters;
+    switchEmptyLetters.innerHTML = "The word is: " + correctLetters.join('');
     switchUsedLetters.innerHTML = "Letters guessed: ";
     switchGuessCount.innerHTML = "Guesses remaining: " + guessCount;
     switchWins.innerHTML = "Wins: " + wins;
@@ -57,6 +57,7 @@ window.onload = function() {
         console.log(temp);
         correctLetters = temp.join("");
         console.log(correctLetters);
+        switchEmptyLetters.innerHTML = "The word is: " + correctLetters.split("");
         isCorrect = true;
       } 
     }
