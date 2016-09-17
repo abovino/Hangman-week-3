@@ -23,14 +23,19 @@ window.onload = function() {
     guessCount = 6;
     //Creates empty letter placeholders for HTML
     for (var i = 0; i < answer.length; i++) {
-      correctLetters.push(' _ ');
+      emptyLetters.push(' _ ');
     }
-    switchEmptyLetters.innerHTML = "The word is: " + correctLetters.join('');
+    switchEmptyLetters.innerHTML = "The word is: " + emptyLetters.join('');
     switchUsedLetters.innerHTML = "Letters guessed: ";
     switchGuessCount.innerHTML = "Guesses remaining: " + guessCount;
     switchWins.innerHTML = "Wins: " + wins;
     switchLosses.innerHTML = "Losses: " + losses;
-  console.log(emptyLetters);
+    console.log(emptyLetters);
+  }
+
+  //Updates the scoreboard
+  function updateScoreboard() {
+
   }
 
   //Starts the game and selects a random word, calls the createScoreboard function
@@ -54,10 +59,10 @@ window.onload = function() {
     for (i = 0; i <= answer.length; i++) {
       if (answer[i] === letter) {
         temp[i] = answer[i];
-        console.log(temp);
-        correctLetters = temp.join("");
+        //console.log(temp);
+        correctLetters = temp;
         console.log(correctLetters);
-        switchEmptyLetters.innerHTML = "The word is: " + correctLetters.split("");
+        switchEmptyLetters.innerHTML = "The word is: " + correctLetters;
         isCorrect = true;
       } 
     }
