@@ -58,10 +58,13 @@ window.onload = function() {
     var isCorrect = false;
     for (i = 0; i <= answer.length; i++) {
       if (answer[i] === letter) {
-        temp[i] = answer[i];
-        //console.log(temp);
+        correctLetters[i] = answer[i];
+        //index = correctLetters.indexOf(correctLetters[i]);
+       /* console.log("INDEX: " + index)
+        console.log("Temp: " + temp[i]);
         correctLetters = temp;
-        console.log(correctLetters);
+        console.log("Correct Letters: " + correctLetters);
+        console.log("Empty Letters: " + emptyLetters);*/
         //emptyLetters = emptyLetters.replace(' _ ', 'a');
         switchEmptyLetters.innerHTML = "The word is: " + emptyLetters.join('');
         isCorrect = true;
@@ -74,6 +77,8 @@ window.onload = function() {
       switchGuessCount.innerHTML = "Guesses remaining: " + guessCount;
       console.log(guessCount)
     }
+    
+    console.log(answer.indexOf(letter));
   }/*checkLetter()*/
 
   //Captures users keystrokes
