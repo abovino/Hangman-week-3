@@ -62,7 +62,8 @@ window.onload = function() {
         //console.log(temp);
         correctLetters = temp;
         console.log(correctLetters);
-        switchEmptyLetters.innerHTML = "The word is: " + correctLetters;
+        //emptyLetters = emptyLetters.replace(' _ ', 'a');
+        switchEmptyLetters.innerHTML = "The word is: " + emptyLetters.join('');
         isCorrect = true;
       } 
     }
@@ -86,14 +87,14 @@ window.onload = function() {
       alert("You already used that letter!");
       return;
     } else {
-      console.log(keyPressed);
+      //console.log(keyPressed);
     }
 
     //If letter wasn't guessed already then store it in usedLetters array
     if (alphabet.indexOf(keyPressed) !== -1) {
       usedLetters.push(keyPressed);
       switchUsedLetters.innerHTML = "Letters Guessed: " + usedLetters;
-      console.log(usedLetters);
+      //console.log(usedLetters);
     } else {
       return;
     }
