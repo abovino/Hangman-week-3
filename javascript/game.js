@@ -33,11 +33,6 @@ window.onload = function() {
     console.log(emptyLetters);
   }
 
-  //Updates the scoreboard
-  function updateScoreboard() {
-
-  }
-
   //Starts the game and selects a random word, calls the createScoreboard function
   function startGame() {
     usedLetters = [];
@@ -53,21 +48,31 @@ window.onload = function() {
   //Starts game and calls the createScoreboard function
   startGame();
 
+  //Updates the scoreboard
+  function updateScoreboard(correctLetters) {
+    var index = [];
+    for (i = 0; i < correctLetters.length; i++) {
+      if (correctLetters[i] === answer[i]) {
+        index.push(i);
+      }
+    }
+    console.log("INDEX: " + index);
+  }
+
   //Checks the letter entered by the user
   function checkLetter(letter) {
     var isCorrect = false;
     for (i = 0; i <= answer.length; i++) {
       if (answer[i] === letter) {
         correctLetters[i] = answer[i];
-        //index = correctLetters.indexOf(correctLetters[i]);
-       /* console.log("INDEX: " + index)
-        console.log("Temp: " + temp[i]);
-        correctLetters = temp;
-        console.log("Correct Letters: " + correctLetters);
-        console.log("Empty Letters: " + emptyLetters);*/
+        //console.log("Temp: " + temp[i]);
+        //correctLetters = temp;
+        //console.log("Correct Letters: " + correctLetters);
+        //console.log("Empty Letters: " + emptyLetters);
         //emptyLetters = emptyLetters.replace(' _ ', 'a');
-        switchEmptyLetters.innerHTML = "The word is: " + emptyLetters.join('');
+        //switchEmptyLetters.innerHTML = "The word is: " + emptyLetters.join('');
         isCorrect = true;
+        updateScoreboard(correctLetters);
       } 
     }
 
@@ -78,7 +83,7 @@ window.onload = function() {
       console.log(guessCount)
     }
     
-    console.log(answer.indexOf(letter));
+    
   }/*checkLetter()*/
 
   //Captures users keystrokes
