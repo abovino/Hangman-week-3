@@ -64,6 +64,12 @@ function updateMatchedLetters(letter) {
   }
 }
 
+function rebuildWord() {
+  var wordView = "";
+
+  
+}
+
 startGame();
 
 document.onkeyup = function(event) {
