@@ -67,7 +67,15 @@ function updateMatchedLetters(letter) {
 function rebuildWord() {
   var wordView = "";
 
-  
+  for (i = 0; i < lettersOfWord.length; i++) {
+    if (matchedLetters.indexOf(lettersOfWord[i]) != -1) {
+      wordView += lettersOfWord[i];
+    } else {
+      wordView += " _ ";
+    }
+  }
+
+  document.querySelector("#word").innerHTML = " " + wordView + " ";
 }
 
 startGame();
