@@ -5,7 +5,6 @@ var lettersOfWord = [];
 var matchedLetters = [];
 var guessedLetters = [];
 var guessesLeft = 6;
-var lettersGuessed = [];
 var wins = 0;
 var losses = 0;
 
@@ -14,11 +13,10 @@ function startGame() {
   console.log("activeWord = " + activeWord);
   lettersOfWord = activeWord.split('');
   console.log("lettersOfWord = " + lettersOfWord);
-
-  document.getElementById('used-letters');
-  document.getElementById('guesses-remaining');
-  document.getElementById('wins');
-  document.getElementById('losses');
+  document.querySelector("#guesses-remaining").innerHTML = "Guesses remaining: " + guessesLeft;
+  document.getElementById('used-letters').innerHTML = "Used letters: " + guessedLetters;
+  document.getElementById('wins').innerHTML = "Wins: " + wins;
+  document.getElementById('losses').innerHTML = "Losses: " + losses;
 
   buildWord();
 }/*startGame()*/
@@ -36,7 +34,7 @@ function buildWord() {
 }/*buildWord()*/
 
 function updateGame(letter) {
-  if (guessesLeft == -1) {
+  if (guessesLeft == 0) {
     alert("Game over!");
     return;
   } 
@@ -48,6 +46,24 @@ function updateGame(letter) {
   rebuildWord();
 }/*updateGame*/
 
+function updateGuesses(letter) {
+  guessedLetters.push(letter);
+  if (guessedLetters.indexOf(letter) >= 0 && lettersOfWord.indexOf(letter) == -1){
+    guessesLeft--;
+    document.querySelector("#guesses-remaining").innerHTML = "Guesses remaining: " + guessesLeft;
+  }
+  document.querySelector("#used-letters").innerHTML = "Used letters: " + guessedLetters;
+}/*updateGuesses()*/
+
+function updateMatchedLetters(letter) {
+  for (i = 0; i < lettersOfWord.length; i++) {
+    if (letter === lettersOfWord[i] && matchedLetters.indexOf(letter) == -1) {
+      matchedLetters.push(letter);
+      console.log("Matched Letters: " + matchedLetters);
+    }
+  }
+}
+
 startGame();
 
 document.onkeyup = function(event) {
@@ -55,16 +71,15 @@ document.onkeyup = function(event) {
   var keyPressed = String.fromCharCode(event.keyCode).toUpperCase();
 
   switch (true) {
-    case (lettersGuessed.indexOf(keyPressed) > -1):
+    case (guessedLetters.indexOf(keyPressed) > -1):
       alert("You already used that letter!");
       break;
     case (alphabet.indexOf(keyPressed) == -1):
-      //do nothing
+      //If user doesn't enter a letter, do nothing
       break;
     default:
-      lettersGuessed.push(keyPressed);
-      document.querySelector("#used-letters").innerHTML = "Used Letters: " + lettersGuessed;
-      console.log(lettersGuessed);
+      
+      console.log(guessedLetters);
       updateGame(keyPressed);
       break;
   }
