@@ -10,6 +10,7 @@ window.onload = function() {
   var answer;
   var alphabet = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
   var temp = [];
+  var index = [];
 
   //Assigns variables to document.getElementById
   var switchEmptyLetters = document.getElementById('word');
@@ -38,10 +39,10 @@ window.onload = function() {
     usedLetters = [];
     emptyLetters = [];
     correctLetters = [];
-    selectedWord = words[Math.floor(Math.random() * words.length)].toUpperCase();
-    answer = selectedWord.split('');
+    answer = words[Math.floor(Math.random() * words.length)].toUpperCase();
+    //answer = selectedWord.split('');
     console.log("The Word is: " + answer);
-    console.log(answer.length);
+    console.log(answer/*.length*/);
     createScoreboard();
   }
 
@@ -50,13 +51,29 @@ window.onload = function() {
 
   //Updates the scoreboard
   function updateScoreboard(correctLetters) {
-    var index = [];
+
+
+    /*console.log("NO I: "+correctLetters);
+    console.log("WITH I: "+correctLetters[i]);*/
+
+    /*if (answer.includes(correctLetters[i])) {
+      console.log("True");
+    } else {
+      console.log("False");
+    }*/
+
+    /*if (correctLetters[i] === answer[i]) {
+        index.push([i]);
+      }*/
+
+    /*var index = [];
     for (i = 0; i < correctLetters.length; i++) {
       if (correctLetters[i] === answer[i]) {
         index.push(i);
       }
-    }
-    console.log("INDEX: " + index);
+    }*/
+
+    console.log(index);
   }
 
   //Checks the letter entered by the user
@@ -71,6 +88,7 @@ window.onload = function() {
         //console.log("Empty Letters: " + emptyLetters);
         //emptyLetters = emptyLetters.replace(' _ ', 'a');
         //switchEmptyLetters.innerHTML = "The word is: " + emptyLetters.join('');
+        index.push(i);
         isCorrect = true;
         updateScoreboard(correctLetters);
       } 
