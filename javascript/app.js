@@ -9,6 +9,9 @@ var wins = 0;
 var losses = 0;
 
 function startGame() {
+  guessedLetters = [];
+  matchedLetters = [];
+  guessesLeft = 6;
   activeWord = words[Math.floor(Math.random() * words.length)].toUpperCase();
   console.log("activeWord = " + activeWord);
   lettersOfWord = activeWord.split('');
@@ -34,16 +37,10 @@ function buildWord() {
 }/*buildWord()*/
 
 function updateGame(letter) {
-  if (guessesLeft == 0) {
-    alert("Game over!");
-    return;
-  } 
-
-  console.log(letter);
-
   updateGuesses(letter);
   updateMatchedLetters(letter);
   rebuildWord();
+  checkWin();
 }/*updateGame*/
 
 function updateGuesses(letter) {
@@ -76,6 +73,24 @@ function rebuildWord() {
   }
 
   document.querySelector("#word").innerHTML = " " + wordView + " ";
+  console.log("wordView: " + wordView);
+
+  if (wordView.indexOf("_") >= 0) {
+    console.log("TRUE");
+  } else {
+    console.log("FALSE");
+  }
+}
+
+function checkWin() {
+
+  if (guessesLeft < 0) {
+    alert("Game over!");
+    losses++;
+    startGame();
+    return;
+  }
+
 }
 
 startGame();
