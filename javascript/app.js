@@ -4,7 +4,7 @@ var activeWord;
 var lettersOfWord = [];
 var matchedLetters = [];
 var guessedLetters = [];
-var guessesLeft = 0;
+var guessesLeft = 6;
 var lettersGuessed = [];
 var wins = 0;
 var losses = 0;
@@ -15,12 +15,16 @@ function startGame() {
   lettersOfWord = activeWord.split('');
   console.log("lettersOfWord = " + lettersOfWord);
 
+  document.getElementById('used-letters');
+  document.getElementById('guesses-remaining');
+  document.getElementById('wins');
+  document.getElementById('losses');
+
   buildWord();
-}
+}/*startGame()*/
 
 function buildWord() {
   var wordDisplay = "";
-
   for (var i = 0; i < lettersOfWord.length; i++) {
     if (matchedLetters.indexOf(lettersOfWord[i]) != -1) {
       wordDisplay += lettersOfWord[i];
@@ -28,9 +32,21 @@ function buildWord() {
       wordDisplay += " _ ";
     }
   }
-
   document.querySelector("#word").innerHTML = wordDisplay;
-}
+}/*buildWord()*/
+
+function updateGame(letter) {
+  if (guessesLeft == -1) {
+    alert("Game over!");
+    return;
+  } 
+
+  console.log(letter);
+
+  updateGuesses(letter);
+  updateMatchedLetters(letter);
+  rebuildWord();
+}/*updateGame*/
 
 startGame();
 
@@ -47,22 +63,10 @@ document.onkeyup = function(event) {
       break;
     default:
       lettersGuessed.push(keyPressed);
-      document.querySelector("#used-letters").innerHTML = lettersGuessed;
+      document.querySelector("#used-letters").innerHTML = "Used Letters: " + lettersGuessed;
       console.log(lettersGuessed);
+      updateGame(keyPressed);
       break;
   }
 
-  /*if (lettersGuessed.indexOf(keyPressed) > -1) {
-      alert("You already used that letter!");
-      return;
-  } 
-
-  if (alphabet.indexOf(keyPressed) !== -1) {
-    lettersGuessed.push(keyPressed);
-    document.querySelector("#used-letters").innerHTML = lettersGuessed;
-    console.log(lettersGuessed);
-  } else {
-    return;
-  }*/
-
-}
+}/*document.onkeyup()*/
