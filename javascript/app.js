@@ -79,6 +79,9 @@ function rebuildWord() {
     console.log("TRUE");
   } else {
     console.log("FALSE");
+    alert("You win!");
+    wins++;
+    startGame();
   }
 }
 
