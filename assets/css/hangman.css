@@ -1,12 +1,13 @@
 .hanger-container {
-  border: 1px dotted red;
   color: white;
   position: relative;
+  margin: 0px auto;
 }
 
-.hanger-base {
+#hanger-base {
   width: 500px;
   margin: 0px auto;
+  padding-left: 255px;
 }
 
 #base {
