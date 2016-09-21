@@ -78,10 +78,11 @@ function rebuildWord() {
   if (wordView.indexOf("_") >= 0) {
     console.log("TRUE");
   } else {
-    console.log("FALSE");
-    alert("You win!");
     wins++;
-    startGame();
+    setTimeout(function() {
+      alert("You win!");
+      startGame();
+    }, 50);
   }
 }
 
