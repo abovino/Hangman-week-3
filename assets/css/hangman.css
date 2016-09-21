@@ -1,7 +1,12 @@
+
+
 .hanger-container {
   color: white;
   position: relative;
-  margin: 0px auto;
+  /*margin: 0px auto;*/
+  margin-top: 25px;
+  width: 50%;
+  size: 
 }
 
 #hanger-base {
@@ -10,73 +15,18 @@
   padding-left: 255px;
 }
 
-#base {
-  margin: 0px auto;
-  width: 180px;
-  height: 20px;
-  background: black;
-  margin-bottom: 25px;
-}
-
 #pole {
   margin: 0px auto;
-  width: 20px;
-  height: 300px;
+  width: 40px;
+  height: 600px;
   background: black;
 }
 
 #arm {
   margin: 0px auto;
-  height: 20px;
-  width: 150px;
+  height: 35px;
+  width: 327px;
   background: black;
   position: relative;
-  right: 65px;
-}
-
-#person-container {
-  width: 150px;
-  height: 220px;
-  position: absolute;
-  z-index: 10000;
-}
-
-#head {
-  width: 50px;
-  height: 50px;
-  background: grey;
-  -moz-border-radius: 50px;
-  -webkit-border-radius: 50px;
-  border-radius: 50px;
-}
-
-#body {
-  width: 40px;
-  height: 75px;
-  background: grey;
-}
-
-#l-arm {
-  width: 12px;
-  height: 50px;
-  background: grey;
-}
-
-#r-arm {
-  width: 12px;
-  height: 50px;
-  background: grey;
-  overflow: hidden;
-}
-
-#l-leg {
-  width: 12px;
-  height: 50px;
-  background: grey;
-}
-
-#r-leg {
-  width: 12px;
-  height: 50px;
-  background: grey;
+  right: 125px;
 }
