@@ -3,7 +3,7 @@ body, html {
 }
 
 #bootstrap-override {
-  background-color: #000;
+  /*background-color: #000;*/
 }
 
 .wrapper {
@@ -12,9 +12,9 @@ body, html {
   min-height: 100%;
   height: auto;
   padding-top: 50px;
-  background-image: url('../images/halloween-sil.jpeg');
+/*  background-image: url('../images/halloween-sil.jpeg');
   background-repeat: no-repeat;
-  background-size: 100%;
+  background-size: 100%;*/
 }
 
 .landing {
@@ -43,8 +43,4 @@ text-shadow: rgb(250, 247, 247) 0px 0px 75px;
 
 #startBtn {
 
-}
-
-.scoreboard-container {
-  float: left;
 }
