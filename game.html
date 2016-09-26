@@ -13,30 +13,36 @@
 <div class="wrapper">
   
   <div class="landing">
-    <h1 id="main-title">Halloween Hangman</h1>
+    <h1 id="main-title">United States Capitals</h1>
 
-      <div class="hanger-container">
+      <div class="row" id="hanger-container">
 
-      <div class="scoreboard-container>
-        <div id="word"></div>
+      <div class="col-xs-6 col-sm-6 col-md-6" id="scoreboard-container">
+        <div id="scoreboard">
+          <p id="word"></p>
+          <p id="used-letters"></p>
+          <p id="guesses-remaining"></p>
+          <p id="wins"></p>
+          <p id="losses"></p>
+        </div>
+        <!-- <div id="word"></div>
         <div id="used-letters"></div>
         <div id="guesses-remaining"></div>
         <div id="wins"></div>
-        <div id="losses"></div>
+        <div id="losses"></div> -->
       </div> <!-- scoreboard-container -->
 
-
-        <div id="hanger-base">
-          <div id="arm"></div>
-          <div id="pole"></div>
-        </div><!-- hanger-base -->
+      <div class="col-xs-6 col-sm-6 col-md-6" id="hanger-stage">
+        <img src="assets/images/hangman-stage.png" class="img-responsive">
+      </div>
 
       </div><!-- hanger-container -->
 
-      
-    <a type="button" class="btn btn-default btn-lg" href="#" id="startBtn">Restart</a>
-
   </div><!-- Landing -->
+
+  <div>
+    <a type="button" class="btn btn-default btn-lg" href="#" id="startBtn">Restart</a>
+  </div>
 
 </div> <!-- Wrapper -->
 <script type="text/javascript" src="javascript/app.js"></script>
