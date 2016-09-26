@@ -7,6 +7,7 @@ var guessedLetters = [];
 var guessesLeft = 6;
 var wins = 0;
 var losses = 0;
+var wordDisplay = "";
 
 function startGame() {
   guessedLetters = [];
