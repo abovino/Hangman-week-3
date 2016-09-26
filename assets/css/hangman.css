@@ -1,12 +1,22 @@
-
-
-.hanger-container {
-  color: white;
+#hanger-container {
+  margin: 50px auto;
   position: relative;
-  /*margin: 0px auto;*/
-  margin-top: 25px;
+  vertical-align: middle;
+}
+
+#scoreboard-container {
+  margin: 0px auto;
+  font-size:small;
   width: 50%;
-  size: 
+  position: relative;
+}
+
+#scoreboard {
+  margin-top: 25%;
+}
+
+#hanger-stage {
+
 }
 
 #hanger-base {
